@@ -71,7 +71,7 @@ element.style.padding = "3%"
     })
 });
 
-/////////////////////////////////
+//////////////////////////////
 
 document.querySelectorAll('.nav-link').forEach(element => {
     element.addEventListener("click", (event) => {
