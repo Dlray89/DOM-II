@@ -41,9 +41,19 @@ grabTitle.addEventListener('dblclick', () => {
 
 const grablogo = document.querySelector('.logo-heading');
 grablogo.addEventListener('dblclick', () => {
-grabDestination.style.color = "yellow"
+grablogo.style.color = "yellow"
 console.log(grablogo)
 });
+
+document.querySelector('body');
+fullscreen.addEventListener('fullscreenchange', (event) => {
+    if (document.fullscreenElement) {
+        console.log(`Enable: ${document.fullscreenEnabled.classname('home')} enter full screen`);
+
+    }else{
+        console.log('leaveing full screen')
+    }
+})
 ///////////////////////////////////
 
 document.querySelectorAll('.btn').forEach(element => {

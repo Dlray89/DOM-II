@@ -1,20 +1,28 @@
 .main-navigation {
-  width: 100%;
-  height: 90px;
+  width     : 100%;
+  height    : 90px;
   background: @main-bg;
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, .9) 25%,
+      rgba(0, 0, 0, .1) 50%,
+      rgba(0, 0, 0, .9) 75%);
+  color        : white;
   border-bottom: 2px dashed @navigation-border;
-  position: fixed;
+  position     : fixed;
+
+  -webkit-animation: 4s linear 0s infinite alternate move_eye;
+  animation: 4s linear 0s infinite alternate move_eye;
 
   .nav-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
+    height         : 100%;
+    display        : flex;
+    align-items    : center;
     justify-content: space-between;
 
     @media @mobile {
-      flex-wrap: wrap;
+      flex-wrap      : wrap;
       justify-content: center;
-      padding-top: 10px;
+      padding-top    : 10px;
     }
 
     .logo-heading {
@@ -24,21 +32,27 @@
     }
 
     .nav {
-      width: 350px;
-      display: flex;
+      width          : 350px;
+      display        : flex;
       justify-content: space-evenly;
+      animation      : 3s ease-in 1s infinite reverse both running slidein;
 
       @media @mobile {
-        width: 100%;
+        width          : 100%;
         justify-content: space-around;
       }
-      
-      
+
+
       a {
-        font-size: 1.6rem;
-        color: @font-color;
+        font-size      : 1.6rem;
+        color          : @font-color;
         text-decoration: none;
       }
     }
   }
-} // .main-navigation
+}
+
+@-webkit-keyframes move_eye {from {margin-left: -20%; } to {margin-left: 100%;} ;}
+
+@keyframes move_eye {from {margin-left: -20%; } to {margin-left: 100%;} };
+// .main-navigation
